@@ -555,19 +555,21 @@ button:hover,
 
 .footer {
   background-color: #2d314d;
+  color: white;
   font-weight: 400;
   padding: 2.5rem;
   text-align: center;
 }
 
 @media (min-width: 64em) {
-  .footer {
+  .footer .footer--container {
     display: grid;
+    max-width: 69.375rem;
+    margin: auto;
     grid-template-columns: 1.5fr 1fr 1fr 2fr;
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: "logo links1 links2 cta" "social links1 links2 cta";
     text-align: start;
-    padding: 2.5rem 9rem 2.5rem 9rem;
   }
 }
 
