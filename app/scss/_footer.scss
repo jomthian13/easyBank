@@ -1,0 +1,85 @@
+.footer {
+  background-color: $darkBlue;
+  //color: $white;
+  font-weight: 400;
+  padding: 2.5rem;
+  text-align: center;
+
+  @include breakpoint-up(large) {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "logo links1 links2 cta"
+      "social links1 links2 cta";
+    text-align: start;
+    padding: 2.5rem 9rem 2.5rem 9rem;
+  }
+  a {
+    color: inherit;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 1.875rem;
+
+    @include breakpoint-up(large) {
+      grid-area: logo;
+    }
+  }
+
+  &__social {
+    margin-bottom: 1.875rem;
+    @include breakpoint-up(large) {
+      grid-area: social;
+    }
+    a {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__links {
+    @include breakpoint-up(large) {
+    }
+
+    &.col1 {
+      @include breakpoint-up(large) {
+        grid-area: links1;
+      }
+      a {
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &.col2 {
+      @include breakpoint-up(large) {
+        grid-area: links2;
+      }
+      a {
+        display: block;
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  &__cta {
+    @include breakpoint-up(large) {
+      grid-area: cta;
+      text-align: end;
+    }
+    a.button {
+      color: $white;
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  &__copyright {
+  }
+}

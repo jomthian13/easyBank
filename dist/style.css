@@ -52,6 +52,7 @@ body {
   font-weight: 300;
   color: #9698a6;
   min-height: 300vh;
+  overflow-x: hidden;
 }
 
 body.noScroll {
@@ -237,6 +238,7 @@ button:hover,
   height: 100%;
   width: 100%;
   background-image: linear-gradient(#2d314d, transparent);
+  z-index: 1;
 }
 
 .header nav {
@@ -244,6 +246,7 @@ button:hover,
   background-color: white;
   padding-top: 1.0625rem;
   padding-bottom: 1.0625rem;
+  z-index: 2;
 }
 
 .header__logo img {
@@ -273,6 +276,7 @@ button:hover,
   width: calc(100% - 3rem);
   left: 50%;
   transform: translate(-50%);
+  z-index: 1;
 }
 
 .header__menu a {
@@ -548,5 +552,97 @@ button:hover,
 
 .article__description {
   font-size: 0.8125rem;
+}
+
+.footer {
+  background-color: #2d314d;
+  font-weight: 400;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+@media (min-width: 64em) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "logo links1 links2 cta" "social links1 links2 cta";
+    text-align: start;
+    padding: 2.5rem 9rem 2.5rem 9rem;
+  }
+}
+
+.footer a {
+  color: inherit;
+}
+
+.footer__logo {
+  display: inline-block;
+  margin-bottom: 1.875rem;
+}
+
+@media (min-width: 64em) {
+  .footer__logo {
+    grid-area: logo;
+  }
+}
+
+.footer__social {
+  margin-bottom: 1.875rem;
+}
+
+@media (min-width: 64em) {
+  .footer__social {
+    grid-area: social;
+  }
+}
+
+.footer__social a {
+  display: inline-block;
+}
+
+.footer__social a:not(:last-child) {
+  margin-right: 1rem;
+}
+
+@media (min-width: 64em) {
+  .footer__links.col1 {
+    grid-area: links1;
+  }
+}
+
+.footer__links.col1 a {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.footer__links.col2 {
+  margin-bottom: 1.875rem;
+}
+
+@media (min-width: 64em) {
+  .footer__links.col2 {
+    grid-area: links2;
+  }
+}
+
+.footer__links.col2 a {
+  display: block;
+}
+
+.footer__links.col2 a:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 64em) {
+  .footer__cta {
+    grid-area: cta;
+    text-align: end;
+  }
+}
+
+.footer__cta a.button {
+  color: white;
+  margin-bottom: 1.875rem;
 }
 /*# sourceMappingURL=style.css.map */
