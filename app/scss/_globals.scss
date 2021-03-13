@@ -133,19 +133,39 @@ a:hover {
 //Button
 button,
 .button {
+  position: relative;
   display: inline-block;
   padding: 0.875rem 2.1875rem;
-  background: linear-gradient(to right, $limeGreen, $brightCyan);
+  background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+  background-color: white;
   border-radius: 30px;
   border: 0;
   cursor: pointer;
   font-size: $font-sm;
   color: $white;
   font-weight: 400;
-  transition: opacity 300ms ease-in-out;
+  //transition: opacity 500ms ease-in-out;
 
-  &:hover {
-    opacity: 0.75;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 30px;
+    background-color: $white;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  &:hover::before {
+    opacity: 0.25;
+    // background: linear-gradient(
+    //   to right,
+    //   hsl(136, 65%, 61%),
+    //   hsl(192, 70%, 61%)
+    // );
   }
 }
 

@@ -189,21 +189,36 @@ a:hover {
 
 button,
 .button {
+  position: relative;
   display: inline-block;
   padding: 0.875rem 2.1875rem;
-  background: linear-gradient(to right, #31d35c, #2bb7da);
+  background-image: linear-gradient(to right, #31d35c, #2bb7da);
+  background-color: white;
   border-radius: 30px;
   border: 0;
   cursor: pointer;
   font-size: 0.875rem;
   color: white;
   font-weight: 400;
-  transition: opacity 300ms ease-in-out;
 }
 
-button:hover,
-.button:hover {
-  opacity: 0.75;
+button::before,
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 30px;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+button:hover::before,
+.button:hover::before {
+  opacity: 0.25;
 }
 
 @media (max-width: 63.9375em) {
@@ -600,10 +615,27 @@ button:hover,
 
 .footer__social a {
   display: inline-block;
+  height: 1.25rem;
 }
 
 .footer__social a:not(:last-child) {
   margin-right: 1rem;
+}
+
+.footer__social a svg path {
+  transition: fill 200ms ease-in-out;
+}
+
+.footer__social a:hover svg path {
+  fill: #31d35c;
+}
+
+.footer__links a {
+  transition: color 200ms ease-in-out;
+}
+
+.footer__links a:hover {
+  color: #31d35c;
 }
 
 @media (min-width: 64em) {

@@ -40,14 +40,28 @@
     }
     a {
       display: inline-block;
+      height: 1.25rem;
       &:not(:last-child) {
         margin-right: 1rem;
+      }
+      svg path {
+        transition: fill 200ms ease-in-out;
+      }
+      &:hover svg path {
+        fill: $limeGreen;
       }
     }
   }
 
   &__links {
     @include breakpoint-up(large) {
+    }
+
+    a {
+      transition: color 200ms ease-in-out;
+      &:hover {
+        color: $limeGreen;
+      }
     }
 
     &.col1 {
